@@ -1,0 +1,77 @@
+section_subject_domain_of_clothes
+
+    => nrel_main_idtf:
+    [Раздел. Предметная область одежды]
+    (* <- lang_ru;;*);
+    [Section. Subject domain of clothes]
+    (* <- lang_en;;*);
+
+    <= nrel_section_decomposition:...
+    (*
+        <- sc_node_tuple;;
+        -> section_subject_domain_of_everyday_clothes (* => nrel_main_idtf: [Раздел. Предметная область повседневной одежды] (* <- lang_ru;;*);;*);;
+        -> section_subject_domain_of_evening_clothes (* => nrel_main_idtf: [Раздел. Предметная область выходной одежды] (* <- lang_ru;;*);;*);;
+        -> section_subject_domain_of_home_clothes (* => nrel_main_idtf: [Раздел. Предметная область домашней одежды] (* <- lang_ru;;*);;*);;
+        -> section_subject_domain_of_sport_clothes (* => nrel_main_idtf: [Раздел. Предметная область спортивной одежды] (* <- lang_ru;;*);;*);;
+        -> section_subject_domain_of_uniform_clothes (* => nrel_main_idtf: [Раздел. Предметная область форменной одежды] (* <- lang_ru;;*);;*);;
+        -> section_subject_domain_of_industrial_clothes (* => nrel_main_idtf: [Раздел. Предметная область производственной одежды] (* <- lang_ru;;*);;*);;
+        -> section_subject_domain_of_national_clothes (* => nrel_main_idtf: [Раздел. Предметная область национальной одежды] (* <- lang_ru;;*);;*);;
+    *);
+
+    -> rrel_key_sc_element: 
+        concept_clothes (* => nrel_main_idtf: [Одежда] (* <- lang_ru;;*);;*); 
+        concept_pants (* => nrel_main_idtf: [Штаны] (* <- lang_ru;;*);;*); 
+        concept_tshirt (* => nrel_main_idtf: [Футболка] (* <- lang_ru;;*);;*);  
+        concept_sweatshirt (* => nrel_main_idtf: [Кофта] (* <- lang_ru;;*);;*);  
+        concept_underwear (* => nrel_main_idtf: [Нижнее белье] (* <- lang_ru;;*);;*); 
+        concept_outwear (* => nrel_main_idtf: [Верхняя одежда] (* <- lang_ru;;*);;*); 
+        nrel_cloth_material (* => nrel_main_idtf: [Состав] (* <- lang_ru;;*);;*); 
+        nrel_cloth_brand (* => nrel_main_idtf: [Бренд] (* <- lang_ru;;*);;*); 
+        nrel_cloth_size (* => nrel_main_idtf: [Размер] (* <- lang_ru;;*);;*); 
+        nrel_cloth_price (* => nrel_main_idtf: [Цена] (* <- lang_ru;;*);;*); 
+        nrel_cloth_season (* => nrel_main_idtf: [Сезон] (* <- lang_ru;;*);;*); 
+
+    <- non_atomic_section;;
+
+section_subject_domain_of_clothes
+    = [*
+        subject_domain_of_clothes
+
+            => nrel_main_idtf:
+            [Предметная область одежды]
+            (* <- lang_ru;;*);
+            [Subject domain of clothes]
+            (* <- lang_en;;*);
+
+            <- subject_domain;
+            <- sc_node_struct;
+
+            => nrel_private_subject_domain:
+                subject_domain_of_everyday_clothes (* <-sc_node_struct;; => nrel_main_idtf: [Раздел. Предметная область повседневной одежды] (* <- lang_ru;;*);;*); 
+                subject_domain_of_evening_clothes (* <-sc_node_struct;; => nrel_main_idtf: [Раздел. Предметная область выходной одежды] (* <- lang_ru;;*);;*); 
+                subject_domain_of_home_clothes (* <-sc_node_struct;; => nrel_main_idtf: [Раздел. Предметная область домашней одежды] (* <- lang_ru;;*);;*); 
+                subject_domain_of_sport_clothes (* <-sc_node_struct;; => nrel_main_idtf: [Раздел. Предметная область спортивной одежды] (* <- lang_ru;;*);;*); 
+                subject_domain_of_uniform_clothes (* <-sc_node_struct;; => nrel_main_idtf: [Раздел. Предметная область форменной одежды] (* <- lang_ru;;*);;*); 
+                subject_domain_of_industrial_clothes (* <-sc_node_struct;; => nrel_main_idtf: [Раздел. Предметная область производственной одежды] (* <- lang_ru;;*);;*); 
+                subject_domain_of_national_clothes (* <-sc_node_struct;; => nrel_main_idtf: [Раздел. Предметная область национальной одежды] (* <- lang_ru;;*);;*); 
+
+            <= nrel_private_subject_domain:
+                subject_domain_of_clothes;
+
+            -> rrel_maximum_studied_object_class:
+                concept_clothes (* => nrel_main_idtf: [Одежда] (* <- lang_ru;;*);;*); 
+
+            -> rrel_not_maximum_studied_object_class:
+                concept_pants;
+                concept_tshirt;
+                concept_sweatshirt;
+                concept_underwear;
+                concept_outwear;
+
+            -> rrel_explored_relation:
+                nrel_cloth_brand;
+                nrel_cloth_price;
+                nrel_cloth_season;
+                nrel_cloth_material;
+                nrel_cloth_size;;
+    *];;

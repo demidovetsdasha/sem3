@@ -1,0 +1,50 @@
+clothes_set
+        <-sc_node_class;
+        ->concept_cardigan;;
+
+concept_cardigan
+      <- sc_node_class;
+      => nrel_main_idtf:
+      [Кардиган]
+      (* <- lang_ru;;*);
+      [Cardigan]
+      (* <- lang_en;;*);;
+concept_cardigan <= nrel_sc_text_translation:...
+      (*
+            <- definition;;
+            -> [Кардигáн — Удлинённый жакет прямого покроя без воротника.] (*<- lang_ru;;*) ;;
+      *);;
+
+  
+concept_cardigan => nrel_components:...
+  (*
+      <- sc_node_not_binary_tuple;;
+      -> concept_fabric;;
+      -> concept_fastener;;
+      -> concept_pockets;;
+  *);;
+
+details_set 
+      <- sc_node_class;
+      -> concept_fabric; 
+      -> concept_fastener; 
+      -> concept_pockets;;
+
+concept_cardigan => nrel_appointment: protection;;
+environmental_impact_set
+      <- sc_node_class;
+      -> protection;;
+
+concept_cardigan => nrel_appointment: beauty_set;;
+beauty_set 
+        <- sc_node_class;;
+
+concept_cardigan => nrel_cloth_size: 
+      S;
+      M;
+      L;;
+size_types_set
+      <- sc_node_class;
+      -> S;
+      -> M;
+      -> L;;
