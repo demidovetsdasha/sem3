@@ -12,7 +12,7 @@ concept_cardigan
 concept_cardigan <= nrel_sc_text_translation:...
       (*
             <- definition;;
-            -> [Кардигáн — Удлинённый жакет прямого покроя без воротника.] (*<- lang_ru;;*) ;;
+            -> [Кардигáн — жакет прямого покроя без воротника.] (*<- lang_ru;;*) ;;
       *);;
 
   
