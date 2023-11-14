@@ -1,0 +1,3 @@
+object объект
+spider паук
+paradigm парадигма
