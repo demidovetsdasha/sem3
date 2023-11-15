@@ -19,7 +19,7 @@
     \param english english word of the dictionary
     \return True if yes, False if no
 */
-bool DictionaryTree::IsContains(const string& english)
+bool DictionaryTree::IsContains(string english)
 {
     DictionaryNode* currentNode = node;
     while (currentNode != NULL) {
@@ -42,7 +42,7 @@ bool DictionaryTree::IsContains(const string& english)
   \brief Method Adding a couple of words to dictionary (with parameters)
   \param english, russian couple of words of the dictionary
 */
-void DictionaryTree::Add(const string& english, const string& russian) {
+void DictionaryTree::Add(string english, string russian) {
     if (!node) {
         node = new DictionaryNode(english, russian);
         return;
@@ -78,7 +78,7 @@ void DictionaryTree::Add(const string& english, const string& russian) {
     \param english english word of the dictionary
     \return binary tree without deleted node
 */
-DictionaryNode* DictionaryTree::DeleteNode(const string& english)
+DictionaryNode* DictionaryTree::DeleteNode(string english)
 {
     DictionaryNode* removableNode, * previosNode, * subTreeElement, * previosSubTreeElement;
 
@@ -146,7 +146,7 @@ DictionaryNode* DictionaryTree::DeleteNode(const string& english)
   \brief Method Removing a couple of words (with parameter)
   \param english english word of the dictionary
 */
-void DictionaryTree::Remove(const string& english) {
+void DictionaryTree::Remove(string english) {
     if (IsContains(english) == 0) return;
     node = DeleteNode(english);
 }
@@ -156,7 +156,7 @@ void DictionaryTree::Remove(const string& english) {
     \param english english word of the dictionary
     \return russian translation
 */
-string DictionaryTree::Translate(const string& english) {
+string DictionaryTree::Translate(string english) {
     DictionaryNode* currentNode = node;
     while (currentNode != NULL) {
         if (english == currentNode->englishWord) {
@@ -177,7 +177,7 @@ string DictionaryTree::Translate(const string& english) {
   \brief Method Changing a couple of words in dictionary (with parameters)
   \param english, russian couple of words of the dictionary
 */
-void DictionaryTree::UpdateTranslation(const string& english, const string& russian) {
+void DictionaryTree::UpdateTranslation(string english, string russian) {
     DictionaryNode* currentNode = node;
     while (currentNode != NULL) {
         if (english == currentNode->englishWord) {
@@ -266,7 +266,7 @@ void DictionaryTree::LoadFromFile(const string& filename) {
   \param english english word of the dictionary
   \return russian translation
 */
-string DictionaryTree::operator[](const string& english) {
+string DictionaryTree::operator[](string english) {
     if (IsContains(english) == 0) return "";
     return Translate(english);
 }
