@@ -1,3 +1,8 @@
+//
+// pch.cpp
+//
+
+
 #include<iostream>
 #include<string.h>
 #include<fstream>
@@ -12,7 +17,7 @@
      reading a dictionary from a file.
 
 */
-#include "Dictionary.h"
+#include "pch.h"
 
 /*!
     \brief Helper method for checking if a dictionary contains required word (with parameter)
@@ -21,10 +26,18 @@
 */
 bool DictionaryTree::IsContains(string english)
 {
+    if (Get(english) != "")
+        return true;
+
+    return false;
+}
+
+string DictionaryTree::Get(string english)
+{
     DictionaryNode* currentNode = node;
     while (currentNode != NULL) {
         if (english == currentNode->englishWord) {
-            return true;
+            return currentNode -> russianWord;
         }
         else if (english < currentNode->englishWord) {
             currentNode = currentNode->left;
@@ -34,9 +47,8 @@ bool DictionaryTree::IsContains(string english)
         }
     }
 
-    return false;
+    return "";
 }
-
 
 /*!
   \brief Method Adding a couple of words to dictionary (with parameters)
@@ -49,9 +61,9 @@ void DictionaryTree::Add(string english, string russian) {
     }
 
     DictionaryNode* currentNode = node;
-    while (node) {
+    while (currentNode != NULL) {
         if (english < currentNode->englishWord) {
-            if (currentNode->left == NULL) {
+            if (currentNode != NULL) {
                 currentNode->left = new DictionaryNode(english, russian);
                 return;
             }
@@ -85,7 +97,6 @@ DictionaryNode* DictionaryTree::DeleteNode(string english)
     removableNode = node;
     previosNode = NULL;
 
-    //поиск узла по ключу
     while (removableNode != NULL && removableNode->englishWord != english) {
         previosNode = removableNode;
         removableNode = (english < removableNode->englishWord) ? removableNode->left : removableNode->right;
@@ -97,7 +108,7 @@ DictionaryNode* DictionaryTree::DeleteNode(string english)
         return node;
     }
 
-    //поиск узла на замену удаляемому
+
     if (!removableNode->right)
     {
         subTreeElement = removableNode->left;
@@ -157,18 +168,8 @@ void DictionaryTree::Remove(string english) {
     \return russian translation
 */
 string DictionaryTree::Translate(string english) {
-    DictionaryNode* currentNode = node;
-    while (currentNode != NULL) {
-        if (english == currentNode->englishWord) {
-            return currentNode->russianWord;
-        }
-        else if (english < currentNode->englishWord) {
-            currentNode = currentNode->left;
-        }
-        else {
-            currentNode = currentNode->right;
-        }
-    }
+    if (IsContains(english) == true)
+        return Get(english);
 
     throw exception();
 }
@@ -206,11 +207,11 @@ int DictionaryTree::GetNodesCount(DictionaryNode* node) {
     int left, right;
 
     if (node->left != NULL)
-        left = GetNodesCount(node->left); //считаем количество узлов в левом поддереве
+        left = GetNodesCount(node->left); 
     else left = 0;
 
     if (node->right != NULL)
-        right = GetNodesCount(node->right); //считаем количество узлов в правом поддереве
+        right = GetNodesCount(node->right); 
     else right = 0;
 
     return left + right + 1;
@@ -229,7 +230,7 @@ int DictionaryTree::GetWordsCount() {
   \brief Method Loading dictionary data from file (with parameter)
   \param filename file from which the dictionary is read
 */
-void DictionaryTree::LoadFromFile(const string& filename) {
+void DictionaryTree::LoadFromFile(string filename) {
     ifstream in(filename.c_str());
 
     if (!in)
