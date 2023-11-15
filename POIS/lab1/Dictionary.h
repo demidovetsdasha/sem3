@@ -5,21 +5,24 @@
 using namespace std;
 
 class DictionaryNode {
-public:
+private:
     string englishWord;
     string russianWord;
     DictionaryNode* left;
     DictionaryNode* right;
 
-    DictionaryNode(const string& english, const string& russian) :englishWord(english),
+public:
+DictionaryNode(string english, string russian) :englishWord(english),
         russianWord(russian), left(NULL), right(NULL) {}
+
+friend class DictionaryTree;
 };
 
 class DictionaryTree {
 private:
     DictionaryNode* node;
 
-    DictionaryNode* DeleteNode(const string& key);
+    DictionaryNode* DeleteNode(string key);
     int GetNodesCount(DictionaryNode* node);
     void DeleteDictionary(DictionaryNode* node);
 
@@ -28,13 +31,13 @@ public:
     ~DictionaryTree();
 
 
-    bool IsContains(const string& english);
-    void Add(const string& english, const string& russian);
-    void Remove(const string& english);
-    string Translate(const string& english);
-    void UpdateTranslation(const string& english, const string& russian);
+    bool IsContains(string english);
+    void Add(string english, string russian);
+    void Remove(string english);
+    string Translate(string english);
+    void UpdateTranslation(string english, string russian);
     int GetWordsCount();
-    void LoadFromFile(const string& filename);
+    void LoadFromFile(string filename);
 
-    string operator [](const string& english);
+    string operator [](string english);
 };
