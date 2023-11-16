@@ -19,7 +19,7 @@
     \param english english word of the dictionary
     \return True if yes, False if no
 */
-bool DictionaryTree::IsContains(string english)
+bool DictionaryTree::IsContains(string english) const
 {
     DictionaryNode* currentNode = node;
     while (currentNode != NULL) {
