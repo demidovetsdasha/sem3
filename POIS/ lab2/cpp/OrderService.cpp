@@ -7,13 +7,13 @@ void OrderService::ShowTheatres() {
 }
 
 void OrderService::ShowPrice() {
-    cout << "1. Äåòñêèé" << endl;
-    cout << "2. Âçðîñëûé" << endl;
-    cout << "3. Ñòóäåí÷åñêèé" << endl;
+    cout << "1. Ã„Ã¥Ã²Ã±ÃªÃ¨Ã©" << endl;
+    cout << "2. Ã‚Ã§Ã°Ã®Ã±Ã«Ã»Ã©" << endl;
+    cout << "3. Ã‘Ã²Ã³Ã¤Ã¥Ã­Ã·Ã¥Ã±ÃªÃ¨Ã©" << endl;
 }
 
 Theatre OrderService::ChooseTheatre() {
-    cout << " Âûáåðèòå òåàòð: " << endl;
+    cout << " Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã²Ã¥Ã Ã²Ã°: " << endl;
     ShowTheatres();
     int index;
     cin >> index;
@@ -21,7 +21,7 @@ Theatre OrderService::ChooseTheatre() {
 }
 
 Performance OrderService::ChoosePerformance(Theatre theatre) {
-    cout << " Âûáåðèòå ñïåêòàêëü: " << endl;
+    cout << " Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã±Ã¯Ã¥ÃªÃ²Ã ÃªÃ«Ã¼: " << endl;
     theatre.ShowAfisha();
     int index;
     cin >> index;
@@ -29,7 +29,7 @@ Performance OrderService::ChoosePerformance(Theatre theatre) {
 }
 
 string OrderService::ChoosePlace(Performance performance) {
-    cout << " Âûáåðèòå ìåñòî: " << endl;
+    cout << " Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã¬Ã¥Ã±Ã²Ã®: " << endl;
     performance.ShowPlaces();
     int index;
     cin >> index;
@@ -38,7 +38,7 @@ string OrderService::ChoosePlace(Performance performance) {
 
 int OrderService::ChoosePrice()
 {
-    cout << " Âûáåðèòå òèï áèëåòà: " << endl;
+    cout << " Ã‚Ã»Ã¡Ã¥Ã°Ã¨Ã²Ã¥ Ã²Ã¨Ã¯ Ã¡Ã¨Ã«Ã¥Ã²Ã : " << endl;
     ShowPrice();
     int index;
     cin >> index;
@@ -52,6 +52,7 @@ Ticket OrderService::OrderTicket() {
     int price = ChoosePrice();
 
     Ticket ticket(performance, place, price);
+    ticket.ShowInfo();
 
     theatre.StartPeroformance(ticket);
     return ticket;
