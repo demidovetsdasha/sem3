@@ -4,5 +4,5 @@
 Performance Ticket::GetPerformance() { return performance; }
 
 void Ticket::ShowInfo() {
-    cout << "\nÑïåêòàêëü: " << performance.GetName() << "\nÄaòa : " << performance.GetDate() << "\nÖeía : " << price << "\n";
+    cout << "\nÐ¡Ð¿ÐµÐºÑ‚Ð°ÐºÐ»ÑŒ: " << performance.GetName() << "\nÐ”aÑ‚a : " << performance.GetDate() << "\nÐœÐµÑÑ‚Ð¾ : " << place << "\nÐ¦eÐ½a : " << price << "\n";
 }
