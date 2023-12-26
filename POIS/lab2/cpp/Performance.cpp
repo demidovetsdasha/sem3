@@ -36,9 +36,10 @@ string Performance::GetPlace(int i) { return places[i].GetPlace();
   \brief Show list avaible places
 */
 void Performance::ShowPlaces() {
-    for (int i = 0; i < places.size(); i++)
+    /*for (int i = 0; i < places.size(); i++)
         if (places[i].IsEmpty()) 
-            cout << "Ðÿä-ìåñòî: " << places[i].GetPlace() << endl;
+            cout << "Ð ÑÐ´-ÐœÐµÑÑ‚Ð¾: " << places[i].GetPlace() << endl;
+*/
 }
 
 /*!
@@ -64,6 +65,7 @@ void Performance::Start()
   \param actor new actor
 */
 void Performance::AddActor(Actor actor) {
+  if (std::find(actors.begin(), actors.end(), actor) == actors.end()) 
     actors.push_back(actor);
 }
 
@@ -72,8 +74,7 @@ void Performance::AddActor(Actor actor) {
 \param actor removable actor
 */
 void Performance::RemoveActor(Actor actor) {
-    for (int i = 0; i < actors.size(); i++)
-        if (actors[i] == actor) actors.erase(actors.begin() + i);
+  actors.erase(std::remove(actors.begin(), actors.end(), actor), actors.end());
 }
 
 /*!
