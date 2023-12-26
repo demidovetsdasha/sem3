@@ -14,7 +14,7 @@
 */
 void Theatre::Introduction()
 {
-    cout << "Äîáðî ïîæàëîâàòü â òåàòð!" << endl;
+    cout << "Ð”Ð¾Ð±Ñ€Ð¾ Ð¿Ð¾Ð¶Ð°Ð»Ð¾Ð²Ð°Ñ‚ÑŒ Ð² Ñ‚ÐµÐ°Ñ‚Ñ€!" << endl;
 }
 /*!
     \brief Getter of Name
