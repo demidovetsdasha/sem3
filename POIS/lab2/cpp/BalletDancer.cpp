@@ -13,5 +13,5 @@
   \brief Play balletdancer role 
 */
 void BalletDancer::Play() {
-    cout << "Èìÿ áàëåðèíû: " << name << ", Ðîëü: " << role << endl;
+    cout << "Ð˜Ð¼Ñ Ð±Ð°Ð»ÐµÑ€Ð¸Ð½Ñ‹: " << name << ", Ð Ð¾Ð»ÑŒ: " << GetRole(); << endl;
 }
