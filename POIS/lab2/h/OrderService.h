@@ -13,15 +13,15 @@ private:
 
     void ShowPrice();
 
-    Theatre ChooseTheatre();
+    Theatre ChooseTheatre(int index);
 
-    Performance ChoosePerformance(Theatre theatre);
+    Performance ChoosePerformance(Theatre theatre, int index);
 
-    string ChoosePlace(Performance performance);
+    string ChoosePlace(Performance performance, int index);
 
-    int ChoosePrice();
+    int ChoosePrice(int index);
 
 public:
     OrderService(vector<Theatre> theatres) : theatres(theatres) {}
-    Ticket OrderTicket();
+    Ticket OrderTicket(int theatreIndex, int performanceIndex, int placeIndex, int priceIndex);
 };
