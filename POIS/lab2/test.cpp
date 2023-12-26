@@ -14,22 +14,25 @@
 #include "OrderService.h"
 #include <iostream>
 
-using namespace std;
+TEST(TestCaseName, TestName) {
+  EXPECT_EQ(1, 1);
+  EXPECT_TRUE(true);
+}
 
 TEST(TheatreTest, ActorsTest) {
-    Actor actor1("Катя", "Рамона");
-    Musician actor2("Петя", "Арфа");
-    DollActor actor3("Лена", "Момо");
-    BalletDancer actor4("Вася", "Лебедь");
+    Actor actor1("РљР°С‚СЏ", "Р Р°РјРѕРЅР°");
+    Musician actor2("РџРµС‚СЏ", "РђСЂС„Р°");
+    DollActor actor3("Р›РµРЅР°", "РџР°СѓР»РёРЅРєР°");
+    BalletDancer actor4("РђРЅРЅР°", "Р›РµР±РµРґСЊ");
 
-    EXPECT_EQ(actor1.GetName(), "Катя");
-    EXPECT_EQ(actor1.GetRole(), "Рамона");
-    EXPECT_EQ(actor3.GetName(), "Лена");
-    EXPECT_EQ(actor3.GetRole(), "Момо");
-    EXPECT_EQ(actor4.GetName(), "Вася");
-    EXPECT_EQ(actor4.GetRole(), "Лебедь");
-    EXPECT_EQ(actor2.GetName(), "Петя");
-    EXPECT_EQ(actor2.GetRole(), "Арфа");
+    EXPECT_EQ(actor1.GetName(), "РљР°С‚СЏ");
+    EXPECT_EQ(actor1.GetRole(), "Р Р°РјРѕРЅР°");
+    EXPECT_EQ(actor3.GetName(), "Р›РµРЅР°");
+    EXPECT_EQ(actor3.GetRole(), "РџР°СѓР»РёРЅРєР°");
+    EXPECT_EQ(actor4.GetName(), "РђРЅРЅР°");
+    EXPECT_EQ(actor4.GetRole(), "Р›РµР±РµРґСЊ");
+    EXPECT_EQ(actor2.GetName(), "РџРµС‚СЏ");
+    EXPECT_EQ(actor2.GetRole(), "РђСЂС„Р°");
 }
 
 TEST(TheatreTest, DateTest) {
@@ -53,19 +56,21 @@ TEST(TheatreTest, PlaceTest) {
 
 TEST(TheatreTest, PerformanceTest)
 {
-    Actor actor1("Катя", "Рамона");
-    Musician actor2("Петя", "Арфа");
-    DollActor actor3("Лена", "Момо");
-    BalletDancer actor4("Вася", "Лебедь");
+    Actor actor1("РљР°С‚СЏ", "Р Р°РјРѕРЅР°");
+    Actor actor1_0("РљР°С‚СЏ", "Р Р°РјРѕРЅР°");
+    Musician actor2("РџРµС‚СЏ", "РђСЂС„Р°");
+    DollActor actor3("Р›РµРЅР°", "РџР°СѓР»РёРЅРєР°");
+    BalletDancer actor4("РђРЅРЅР°", "Р›РµР±РµРґСЊ");
     Date date(10, 10, 5, 12, 2023);
 
-    Performance performance("Все и сразу", date);
+    Performance performance("Р’СЃРµ Рё СЃСЂР°Р·Сѓ", date);
     performance.CreatePlaces(1, 1);
 
-    EXPECT_EQ(performance.GetName(), "Все и сразу");
+    EXPECT_EQ(performance.GetName(), "Р’СЃРµ Рё СЃСЂР°Р·Сѓ");
     EXPECT_EQ(performance.GetDate(), date.GetDate());
 
     performance.AddActor(actor1);
+    performance.AddActor(actor1_0);
     performance.AddActor(actor2);
     performance.AddActor(actor3);
     performance.AddActor(actor4);
@@ -79,21 +84,21 @@ TEST(TheatreTest, PerformanceTest)
 
 TEST(TheatreTest, TheatresTest) {
     Date date(10, 10, 5, 12, 2023);
-    Performance performance("Все и сразу", date);
+    Performance performance("Р’СЃРµ Рё СЃСЂР°Р·Сѓ", date);
     performance.CreatePlaces(1, 1);
 
     vector<Performance> perfomances;
     perfomances.push_back(performance);
 
-    Theatre theatre1("Большой театр", "ул. Розовая, 31", "Романов", perfomances);
-    OperaTheatre theatre2("Оперный театр", "ул. Красочная, 1", "Добровольский", perfomances);
-    DollTheatre theatre3("Кукольный театр", "ул. Цветочнная, 4", "Кирилов", perfomances);
-    BalletTheatre theatre4("Баллетный театр", "ул. Дворовая, 7", "Моринов", perfomances);
+    Theatre theatre1("Р‘РѕР»СЊС€РѕР№ С‚РµР°С‚СЂ", "СѓР». Р РѕР·РѕРІР°СЏ, 31", "Р РѕРјР°РЅРѕРІ", perfomances);
+    OperaTheatre theatre2("РћРїРµСЂРЅС‹Р№ С‚РµР°С‚СЂ", "СѓР». РљСЂР°СЃРѕС‡РЅР°СЏ, 1", "Р”РѕР±СЂРѕРІРѕР»СЊСЃРєРёР№", perfomances);
+    DollTheatre theatre3("РљСѓРєРѕР»СЊРЅС‹Р№ С‚РµР°С‚СЂ", "СѓР». Р¦РІРµС‚РѕС‡РЅР°СЏ, 4", "РљРёСЂРѕРІРµС†", perfomances);
+    BalletTheatre theatre4("РўРµР°С‚СЂ Р±Р°Р»РµС‚Р°", "СѓР». Р”РІРѕСЂРѕРІР°СЏ, 7", "РњРѕСЂРёРЅРѕРІ", perfomances);
 
-    EXPECT_EQ(theatre1.GetName(), "Большой театр");
-    EXPECT_EQ(theatre3.GetName(), "Кукольный театр");
-    EXPECT_EQ(theatre4.GetName(), "Баллетный театр");
-    EXPECT_EQ(theatre2.GetName(), "Оперный театр");
+    EXPECT_EQ(theatre1.GetName(), "Р‘РѕР»СЊС€РѕР№ С‚РµР°С‚СЂ");
+    EXPECT_EQ(theatre3.GetName(), "РљСѓРєРѕР»СЊРЅС‹Р№ С‚РµР°С‚СЂ");
+    EXPECT_EQ(theatre4.GetName(), "РўРµР°С‚СЂ Р±Р°Р»РµС‚Р°");
+    EXPECT_EQ(theatre2.GetName(), "РћРїРµСЂРЅС‹Р№ С‚РµР°С‚СЂ");
 }
 
 TEST(TheatreTest, TicketAndOrderServiceTest)
@@ -101,19 +106,19 @@ TEST(TheatreTest, TicketAndOrderServiceTest)
     setlocale(LC_ALL, "Rus");
 
     Date date(10, 10, 5, 12, 2023);
-    Performance performance("Все и сразу", date);
+    Performance performance("Р’СЃРµ Рё СЃСЂР°Р·Сѓ", date);
     performance.CreatePlaces(2, 2);
 
     vector<Performance> perfomances;
     perfomances.push_back(performance);
 
-    Theatre theatre("Большой театр", "ул. Розовая, 31", "Романов", perfomances);
+    Theatre theatre("Р‘РѕР»СЊС€РѕР№ С‚РµР°С‚СЂ", "СѓР». Р РѕР·РѕРІР°СЏ, 31", "Р РѕРјР°РЅРѕРІ", perfomances);
     vector<Theatre> theatres;
     theatres.push_back(theatre);
 
     OrderService orderService(theatres);
 
-    Ticket ticket = orderService.OrderTicket();
+    Ticket ticket = orderService.OrderTicket(1, 1, 1, 1);
 
     EXPECT_EQ(ticket.GetPerformance().GetName(), performance.GetName());
 }
