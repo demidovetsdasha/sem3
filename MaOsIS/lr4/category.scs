@@ -1,0 +1,21 @@
+rrel_category
+   => rrel_main_idtf: [Категория] (* <- lang_ru;; *);;
+
+   pants
+   => nrel_main_idtf: [штаны](*<- lang_ru;;*);;
+
+   skirt
+   => nrel_main_idtf: [юбка](*<- lang_ru;;*);;
+
+   tshirt
+   => nrel_main_idtf: [футболка](*<- lang_ru;;*);;
+
+   sweatshirt
+   => nrel_main_idtf: [кофта](*<- lang_ru;;*);;
+
+   underwear
+   => nrel_main_idtf: [нижнее белье](*<- lang_ru;;*);;
+
+   outwear
+   => nrel_main_idtf: [верхняя одежда](*<- lang_ru;;*);;
+

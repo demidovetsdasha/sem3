@@ -1,0 +1,23 @@
+lr4_patterns
+    => nrel_main_idtf: [Шаблоны для поиска по БЗ] (* <- lang_ru;; *);
+    -> pattern1;
+    -> pattern2;
+    -> pattern3;
+    -> pattern4;
+    -> pattern5;
+    -> pattern6;
+    -> pattern7;
+    -> pattern8;
+    -> pattern9;
+    -> pattern10;;
+
+pattern1 => nrel_main_idtf: [Найти демисезонную одежду в Befree и Stradivarius] (* <- lang_ru;; *);;
+pattern2 => nrel_main_idtf: [Узнать, к какому типу одежды относится комбинезон] (* <- lang_ru;; *);;
+pattern3 => nrel_main_idtf: [Найти повседневную одежду бренда Bershka размера S] (* <- lang_ru;; *);;
+pattern4 => nrel_main_idtf: [Узнать о наличии зимних вещей размера L] (* <- lang_ru;; *);;
+pattern5 => nrel_main_idtf: [Найти одежду на лето] (* <- lang_ru;; *);;
+pattern6 => nrel_main_idtf: [Узнать категории всех доступных вещей] (* <- lang_ru;; *);;
+pattern7 => nrel_main_idtf: [Найти национальную белорусскую одежду] (* <- lang_ru;; *);;
+pattern8 => nrel_main_idtf: [Узнать о всей одежде в наличии] (* <- lang_ru;; *);;
+pattern9 => nrel_main_idtf: [Найти все доступные в наличии штаны] (* <- lang_ru;; *);;
+pattern10 => nrel_main_idtf: [Узнать о наличии нижнего белья бренда MarkFormelle] (* <- lang_ru;; *);;

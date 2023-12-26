@@ -1,0 +1,24 @@
+nrel_brand
+    => nrel_main_idtf: [Бренд*] (* <- lang_ru;; *);;
+
+    Zara
+   => nrel_main_idtf: [Zara](*<- lang_en;;*);;
+
+    Bershka
+   => nrel_main_idtf: [Bershka](*<- lang_en;;*);;
+
+    Stradivarius
+   => nrel_main_idtf: [Stradivarius](*<- lang_en;;*);;
+
+    Befree
+   => nrel_main_idtf: [Befree](*<- lang_en;;*);;
+
+    MarkFormelle
+   => nrel_main_idtf: [MarkFormelle](*<- lang_en;;*);;
+
+    BelaruskiLen
+   => nrel_main_idtf: [Белорусский Лён](*<- lang_ru;;*);;
+
+    MTZ
+   => nrel_main_idtf: [Минский Тракторный Завод](*<- lang_ru;;*);;
+

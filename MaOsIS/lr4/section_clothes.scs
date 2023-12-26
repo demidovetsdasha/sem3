@@ -1,0 +1,111 @@
+section_clothes
+->clothes_jeans;
+->clothes_shorts;
+->clothes_combinezon;
+->clothes_cardigan;
+->clothes_top;
+->clothes_pajamas;
+->clothes_coat;
+->clothes_socks;
+->clothes_evening_dress;
+->clothes_spadnitsa;;
+
+   clothes_jeans
+    => nrel_main_idtf: [clothes_jeans] (* <- lang_en;; *);
+    => nrel_decomposition:everyday_clothes;
+    => nrel_brand:Bershka;
+    => nrel_size:M;
+    => nrel_season:demi_season;
+    => rrel_category: pants;
+    <- concept_clothes;;
+   
+
+   clothes_shorts
+    => nrel_main_idtf: [clothes_shorts] (* <- lang_en;; *);
+    => nrel_decomposition:everyday_clothes;
+    => nrel_brand:Bershka;
+    => nrel_size:S;
+    => nrel_season:summer;
+    => rrel_category: pants;
+    <- concept_clothes;;
+
+    clothes_combinezon
+    => nrel_main_idtf: [clothes_combinezon] (* <- lang_en;; *);
+    => nrel_decomposition:industrial_clothes;
+    => nrel_brand:MTZ;
+    => nrel_size:L;
+    => nrel_season:winter;
+    => rrel_category: outwear;
+    <- concept_clothes;;
+
+
+    clothes_cardigan
+    => nrel_main_idtf: [clothes_cardigan] (* <- lang_en;; *);
+    => nrel_decomposition:everyday_clothes;
+    => nrel_brand:Stradivarius;
+    => nrel_size:L;
+    => nrel_season:demi_season;
+    => rrel_category: sweatshirt;
+    <- concept_clothes;;
+
+
+    clothes_top
+    => nrel_main_idtf: [clothes_top] (* <- lang_en;; *);
+    => nrel_decomposition:sport_clothes;
+    => nrel_brand:Sportmaster;
+    => nrel_size:S;
+    => nrel_season:summer;
+    => rrel_category: tshirt;
+    <- concept_clothes;;
+
+    clothes_pajamas
+    => nrel_main_idtf: [clothes_pajamas] (* <- lang_en;; *);
+    => nrel_decomposition:home_clothes;
+    => nrel_brand:MarkFormelle;
+    => nrel_size:M;
+    => nrel_season:demi_season;
+    => rrel_category: underwear;
+    <- concept_clothes;;
+
+
+    clothes_coat
+    => nrel_main_idtf: [clothes_coat] (* <- lang_en;; *);
+    => nrel_decomposition:everyday_clothes;
+    => nrel_brand:Zara;
+    => nrel_size:L;
+    => nrel_season:winter;
+    => rrel_category: outwear;
+    <- concept_clothes;;
+
+   clothes_socks
+    => nrel_main_idtf: [clothes_coat] (* <- lang_en;; *);
+    => nrel_decomposition:everyday_clothes;
+    => nrel_brand:Zara;
+    => nrel_size:L;
+    => nrel_season:winter;
+    => rrel_category: outwear;
+    <- concept_clothes;;
+    <- concept
+
+
+    clothes_evening_dress
+    => nrel_main_idtf: [clothes_evening_dress] (* <- lang_en;; *);
+    => nrel_decomposition:evening_clothes;
+    => nrel_brand:Befree;
+    => nrel_size:S;
+    => nrel_season:demi_season;
+    => rrel_category: skirt;
+    <- concept_clothes;;
+
+    clothes_spadnitsa
+    => nrel_main_idtf: [clothes_spadnitsa] (* <- lang_en;; *);
+    => nrel_decomposition:national_clothes;
+    => nrel_brand:BelaruskiLen;
+    => nrel_size:S;
+    => nrel_season:demi_season;
+    => rrel_category: skirt;
+    <- concept_clothes;;
+    <- concept_Belarusian_culture
+
+
+    

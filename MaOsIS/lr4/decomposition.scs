@@ -1,0 +1,20 @@
+nrel_decomposition
+   => nrel_main_idtf: [Вид одежды*] (* <- lang_ru;; *);;
+
+   everyday_clothes
+   => nrel_main_idtf: [повседневная одежда](*<- lang_ru;;*);;
+
+   evening_clothes
+   => nrel_main_idtf: [вечерняя одежда](*<- lang_ru;;*);;
+
+   home_clothes
+    => nrel_main_idtf: [домашняя одежда](*<- lang_ru;;*);;
+
+    sport_clothes
+    => nrel_main_idtf: [спортивная одежда](*<- lang_ru;;*);;
+
+    industrial_clothes
+    => nrel_main_idtf: [производственная одежда](*<- lang_ru;;*);;
+
+    national_clothes
+    => nrel_main_idtf: [национальная одежда](*<- lang_ru;;*);;

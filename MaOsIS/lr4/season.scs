@@ -1,0 +1,11 @@
+nrel_season
+    => nrel_main_idtf: [Сезон*] (* <- lang_ru;; *);;
+
+    winter
+   => nrel_main_idtf: [зима](*<- lang_ru;;*);;
+
+    summer
+   => nrel_main_idtf: [лето](*<- lang_ru;;*);;
+
+    demi_season
+   => nrel_main_idtf: [демисезон](*<- lang_ru;;*);;

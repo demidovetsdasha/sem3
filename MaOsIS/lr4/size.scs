@@ -1,0 +1,11 @@
+nrel_size
+    => nrel_main_idtf: [Размер*] (* <- lang_ru;; *);;
+
+    S
+   => nrel_main_idtf: [S](*<- lang_en;;*);;
+
+    M
+   => nrel_main_idtf: [M](*<- lang_en;;*);;
+
+    L
+   => nrel_main_idtf: [L](*<- lang_en;;*);;
