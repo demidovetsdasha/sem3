@@ -13,5 +13,5 @@
   \brief Play role
 */
 void Musician::Play() {
-    cout << "Èìÿ ìóçûêàíòà: " << name << ", Èíñòðóìåíò: " << instrument << endl;;
+    cout << "Ð˜Ð¼Ñ Ð¼ÑƒÐ·Ñ‹ÐºÐ°Ð½Ñ‚Ð°: " << name << ", Ð˜Ð½ÑÑ‚Ñ€ÑƒÐ¼ÐµÐ½Ñ‚: " << instrument << endl;;
 }
