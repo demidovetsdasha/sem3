@@ -4,7 +4,7 @@
 /*!
     \brief Implementation of the OrderService class
     \author Dasha
-    \version 1
+    \version 1.1
     \date November 2023
     \details Contains a constructor; method for showing information and ordering tickets.
 */
@@ -21,66 +21,54 @@ void OrderService::ShowTheatres() {
   \brief Show possible ticket price types
 */
 void OrderService::ShowPrice() {
-    cout << "1. Äåòñêèé - 5 ðóá" << endl;
-    cout << "2. Âçðîñëûé - 20 ðóá" << endl;
-    cout << "3. Ñòóäåí÷åñêèé - 15 ðóá" << endl;
+    cout << "1. Ð”ÐµÑ‚ÑÐºÐ¸Ð¹ - 5 Ñ€ÑƒÐ±" << endl;
+    cout << "2. Ð’Ð·Ñ€Ð¾ÑÐ»Ñ‹Ð¹ - 20 Ñ€ÑƒÐ±" << endl;
+    cout << "3. Ð¡Ñ‚ÑƒÐ´ÐµÐ½Ñ‡ÐµÑÐºÐ¸Ð¹ - 15 Ñ€ÑƒÐ±" << endl;
 }
 
 /*!
   \brief Choosing theatre
+  \param index index of the theatre
   \return theatre
 */
-Theatre OrderService::ChooseTheatre() {
-    cout << " Âûáåðèòå òåàòð: " << endl;
-    ShowTheatres();
-    int index;
-    cin >> index;
-
-    while (index > theatres.size())
-    {
-        cout << "Âûáåðèòå ñíîâà!" << endl;
-        cin.clear();
-        cin >> index;
-    }
-
+Theatre OrderService::ChooseTheatre(int index) {
+    //cout << " Ð¢ÐµÐ°Ñ‚Ñ€Ñ‹: " << endl;
+    //ShowTheatres();
 
     return theatres[index - 1];
 }
 
 /*!
   \brief Choosing performance
+  \param theatre choosed theatre,index index of performance in Afisha
   \return performnce
 */
-Performance OrderService::ChoosePerformance(Theatre theatre) {
-    cout << " Âûáåðèòå ñïåêòàêëü: " << endl;
-    theatre.ShowAfisha();
-    int index;
-    cin >> index;
+Performance OrderService::ChoosePerformance(Theatre theatre, int index) {
+    //cout << " ÐÑ„Ð¸ÑˆÐ° ÑÐ¿ÐµÐºÑ‚Ð°ÐºÐ»ÐµÐ¹: " << endl;
+    //theatre.ShowAfisha();
     return theatre.GetPerformance(index - 1);
 }
 
 /*!
   \brief Choosing Place (String format)
+  \param performance choosed performance,index index of the place in the hall
   \return place
 */
-string OrderService::ChoosePlace(Performance performance) {
-    cout << " Âûáåðèòå ìåñòî: " << endl;
-    performance.ShowPlaces();
-    int index;
-    cin >> index;
+string OrderService::ChoosePlace(Performance performance, int index) {
+    //cout << " Ð¡Ð²Ð¾Ð±Ð¾Ð´Ð½Ñ‹Ðµ Ð¼ÐµÑÑ‚Ð°: " << endl;
+    //performance.ShowPlaces();
     return performance.GetPlace(index - 1);
 }
 
 /*!
   \brief Choosing Price
+  \param index index of the ticket type
   \return price index
 */
-int OrderService::ChoosePrice()
+int OrderService::ChoosePrice(int index)
 {
-    cout << " Âûáåðèòå òèï áèëåòà: " << endl;
-    ShowPrice();
-    int index;
-    cin >> index;
+    //cout << " Ð¢Ð¸Ð¿Ñ‹ Ð±Ð¸Ð»ÐµÑ‚Ð¾Ð²: " << endl;
+    //ShowPrice();
     return ticketPrices[index - 1];
 }
 
@@ -88,15 +76,15 @@ int OrderService::ChoosePrice()
   \brief Order Ticket to visiting performance
   \return ticket
 */
-Ticket OrderService::OrderTicket() {
-    Theatre theatre = ChooseTheatre();
-    Performance performance = ChoosePerformance(theatre);
-    string place = ChoosePlace(performance);
-    int price = ChoosePrice();
+Ticket OrderService::OrderTicket(int theatreIndex, int performanceIndex, int placeIndex, int priceIndex) {
+    Theatre theatre = ChooseTheatre(theatreIndex);
+    Performance performance = ChoosePerformance(theatre, performanceIndex);
+    string place = ChoosePlace(performance, placeIndex);
+    int price = ChoosePrice(priceIndex);
 
     Ticket ticket(performance, place, price);
     ticket.ShowInfo();
 
-    theatre.StartPeroformance(ticket);
+    theatre.StartPerformance(ticket);
     return ticket;
 }
