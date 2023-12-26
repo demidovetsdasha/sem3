@@ -5,7 +5,7 @@
 using namespace std;
 
 class Actor {
-protected:
+private:
     string name;
     string role;
 public:
