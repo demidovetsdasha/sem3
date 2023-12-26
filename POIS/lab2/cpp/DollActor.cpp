@@ -6,5 +6,5 @@
   \brief Play doll actor role
 */
 void DollActor::Play(){
-    cout << "Èìÿ àêòåðà: " << name << ", Èìÿ êóêëû(ðîëü): " << role << endl;
+    cout << "Ð˜Ð¼Ñ Ð°ÐºÑ‚ÐµÑ€Ð°: " << name << ", Ð˜Ð¼Ñ ÐºÑƒÐºÐ»Ñ‹(Ñ€Ð¾Ð»ÑŒ): " << GetRole(); << endl;
 }
